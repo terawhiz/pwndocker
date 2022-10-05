@@ -5,7 +5,9 @@ Help(){
 	echo "Usage: ./$(basename "$0") <libc-version> <image-name>";
 	echo "";
 	echo "Available libc versions:";
-	echo "  - 20.04";
+	echo "  - 2.23";
+	echo "  - 2.27";
+	echo "  - 2.31";
 }
 
 
@@ -15,12 +17,12 @@ then
 	exit 1
 fi
 
-echo docker build ./$1 -t $2;
+# echo docker build ./$1 -t $2;
 docker build ./$1 -t $2
 
-if [ $? -eq "1" ];
+if [ $? -eq "0" ];
 then
-	echo "[-] Build failed!";
-	exit 1
+	echo "[-] Build complete!";
+	exit 0
 fi
-echo "[+] Build Complete!"
+echo "[+] Build failed!"
