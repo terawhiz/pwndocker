@@ -8,6 +8,7 @@ Help(){
 	echo "  - 2.23";
 	echo "  - 2.27";
 	echo "  - 2.31";
+	echo "  - 2.35";
 }
 
 
@@ -18,7 +19,7 @@ then
 fi
 
 # echo docker build ./$1 -t $2;
-docker build ./$1 -t $2
+docker build ./src/$1 -t $2
 
 if [ $? -eq "0" ];
 then

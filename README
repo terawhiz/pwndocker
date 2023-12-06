@@ -1,9 +1,0 @@
-pwndocker
-
-Docker files for pwning.
-
-Libc:
-    - 2.23
-    - 2.27
-    - 2.31
-
