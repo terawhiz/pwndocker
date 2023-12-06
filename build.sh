@@ -19,7 +19,7 @@ then
 fi
 
 # echo docker build ./$1 -t $2;
-docker build ./$1 -t $2
+docker build ./src/$1 -t $2
 
 if [ $? -eq "0" ];
 then
