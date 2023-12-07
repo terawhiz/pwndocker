@@ -3,7 +3,7 @@
 Help(){
 	echo "pwndocker - v0.0.1";
 	echo "Usage: ./$(basename "$0") <libc-version> <image-name>";
-	echo "";
+	echo "default image name is 'pwndocker:libc-<version>'";
 	echo "Available libc versions:";
 	echo "  - 2.23";
 	echo "  - 2.27";
@@ -39,7 +39,11 @@ if [ "$1" = "all" ]; then
 fi
 
 # echo docker build ./$1 -t $2;
-docker build ./src/$1 -t $2
+if [ -z "$2" ]; then
+	docker build ./src/$1 -t pwndocker:libc-$1
+else
+	docker build ./src/$1 -t $2
+fi
 
 if [ $? -eq "0" ];
 then
