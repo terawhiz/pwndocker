@@ -1,4 +1,4 @@
-#1/bin/sh
+#!/bin/bash
 
 Help(){
 	echo "pwndocker - v0.0.1";
